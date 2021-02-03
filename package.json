@@ -1,5 +1,5 @@
 {
-  "name": "genversion-plus",
+  "name": "@korabo/genversion-plus",
   "version": "0.9.0",
   "description": "A command line utility to read version from package.json and attach it into your module as a property",
   "keywords": [
@@ -51,6 +51,7 @@
     "lint": "standard 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
     "lintfix": "standard --fix 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
     "gv": "pnpx ./bin/genversion.js lib/version.js",
-    "release": "pnpm run gv && pnpm run test && pnpm publish"
+    "release": "pnpm run gv && pnpm run test",
+    "public-publish": "pnpm publish --access public"
   }
 }
