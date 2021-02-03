@@ -15,8 +15,10 @@ program
   .description('Generates a version module at the target filepath.')
   .option('-v, --verbose', 'output the new version', increaseVerbosity, 0)
   .option('-s, --semi', 'use semicolons in generated code')
-  .option('-e, --es6', 'use es6 syntax in generated code')
+  .option('-g, --gen <cjs|es6>', 'use cjs or es6 ,,, syntax in generating code')
   .option('-p, --source <path>', 'search for package.json along a custom path')
+  .option('-t, --template <filepath>', 'use given file as generation template')
+  .option('-m, --message <comment>', 'build comment to be generated')
   .action(function (target) {
     if (typeof target !== 'string' || target === '') {
       console.error('Missing argument: target')
@@ -37,8 +39,10 @@ program
         if (isByGenversion) {
           gv.generate(target, {
             useSemicolon: program.semi,
-            useEs6Syntax: program.es6,
-            source: program.source
+            genSyntax: program.gen,
+            source: program.source,
+            template: program.template,
+            message: program.message
           }, function (errg, version) {
             if (errg) {
               console.error(errg)
@@ -62,8 +66,10 @@ program
         // OK, file does not exist.
         gv.generate(target, {
           useSemicolon: program.semi,
-          useEs6Syntax: program.es6,
-          source: program.source
+          genSyntax: program.gen,
+          source: program.source,
+          template: program.template,
+          message: program.message
         }, function (errg, version) {
           if (errg) {
             console.error(errg)

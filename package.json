@@ -1,5 +1,5 @@
 {
-  "name": "genversion",
+  "name": "genversion-plus",
   "version": "2.2.1",
   "description": "A command line utility to read version from package.json and attach it into your module as a property",
   "keywords": [
@@ -17,18 +17,18 @@
     "es6",
     "es2015"
   ],
-  "homepage": "https://github.com/axelpale/genversion",
+  "homepage": "https://github.com/korabo/genversion-plus",
   "main": "index.js",
   "bin": {
-    "genversion": "bin/genversion.js"
+    "genversion-plus": "bin/genversion.js"
   },
   "author": {
-    "name": "Akseli Palen",
-    "email": "akseli.palen@gmail.com"
+    "name": "TAKEUCHI Shinichi",
+    "email": "takeuchi@korabo.jp"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/axelpale/genversion.git"
+    "url": "https://github.com/korabo/genversion-plus.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -46,6 +46,7 @@
     "standard": "^10.0.3"
   },
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "test": "npm run lint && mocha",
     "lint": "standard 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
     "lintfix": "standard --fix 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
