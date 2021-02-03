@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var gv = require('../lib/genversion')
-var v = require('../lib/version')
+var vobj = require('../lib/version')
 var program = require('commander')
 var path = require('path')
 
@@ -10,7 +10,7 @@ var increaseVerbosity = function (verb, total) {
 }
 
 program
-  .version(v)
+  .version(vobj.version)
   .usage('[options] <target>')
   .description('Generates a version module at the target filepath.')
   .option('-v, --verbose', 'output the new version', increaseVerbosity, 0)
@@ -19,6 +19,7 @@ program
   .option('-p, --source <path>', 'search for package.json along a custom path')
   .option('-t, --template <filepath>', 'use given file as generation template')
   .option('-m, --message <comment>', 'build comment to be generated')
+  .option('-a, --author <author>', 'author name to be generated')
   .action(function (target) {
     if (typeof target !== 'string' || target === '') {
       console.error('Missing argument: target')
@@ -42,7 +43,8 @@ program
             genSyntax: program.gen,
             source: program.source,
             template: program.template,
-            message: program.message
+            message: program.message,
+            author: program.author
           }, function (errg, version) {
             if (errg) {
               console.error(errg)
@@ -69,7 +71,8 @@ program
           genSyntax: program.gen,
           source: program.source,
           template: program.template,
-          message: program.message
+          message: program.message,
+          author: program.author
         }, function (errg, version) {
           if (errg) {
             console.error(errg)

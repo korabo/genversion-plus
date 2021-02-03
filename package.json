@@ -47,10 +47,10 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "test": "npm run lint && mocha",
+    "test": "pnpm run lint && mocha",
     "lint": "standard 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
     "lintfix": "standard --fix 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
-    "gv": "./bin/genversion.js lib/version.js",
-    "release": "npm run gv && npm run test && npm publish"
+    "gv": "pnpx ./bin/genversion.js lib/version.js",
+    "release": "pnpm run gv && pnpm run test && pnpm publish"
   }
 }
