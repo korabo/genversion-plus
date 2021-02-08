@@ -20,7 +20,7 @@
   "homepage": "https://github.com/korabo/genversion-plus",
   "main": "index.js",
   "bin": {
-    "genversion-plus": "bin/genversion.js"
+    "genversion-plus": "bin/genversion-plus.js"
   },
   "author": {
     "name": "TAKEUCHI Shinichi",
@@ -50,8 +50,8 @@
     "test": "pnpm run lint && mocha",
     "lint": "standard 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
     "lintfix": "standard --fix 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
-    "gv": "pnpx ./bin/genversion.js lib/version.js",
-    "release": "pnpm version patch && pnpm run gv && pnpm run test",
+    "gvp": "pnpx ./bin/genversion-plus.js",
+    "release": "pnpm run gvp -- lib/version.js && pnpm run test",
     "public-publish": "pnpm publish --access public"
   }
 }
