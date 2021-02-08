@@ -51,7 +51,7 @@
     "lint": "standard 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
     "lintfix": "standard --fix 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
     "gv": "pnpx ./bin/genversion.js lib/version.js",
-    "release": "pnpm run gv && pnpm run test",
+    "release": "pnpm version patch && pnpm run gv && pnpm run test",
     "public-publish": "pnpm publish --access public"
   }
 }
