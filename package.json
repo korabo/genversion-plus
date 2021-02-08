@@ -1,6 +1,6 @@
 {
   "name": "@korabo/genversion-plus",
-  "version": "0.9.1",
+  "version": "1.0.0",
   "description": "A command line utility to read version from package.json and attach it into your module as a property",
   "keywords": [
     "release",
