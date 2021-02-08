@@ -11,7 +11,7 @@ const { rejects } = require('assert')
 
 // If global command is used, you must 'npm link' before tests.
 // const COMMAND = 'genversion';  // Global
-const COMMAND = 'node bin/genversion.js'  // Local
+const COMMAND = 'node bin/genversion-plus.js'  // Local
 
 const P = '.tmp/v.js'
 

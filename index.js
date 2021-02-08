@@ -1,7 +1,7 @@
 
-var gv = require('./lib/genversion');
+var gv = require('./lib/genversion-plus');
 var v = require('./lib/version');
 
 exports.check = gv.check;
 exports.generate = gv.generate;
-exports.version = v;
+exports.version = v.version;
